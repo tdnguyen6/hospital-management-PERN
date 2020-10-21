@@ -29,9 +29,9 @@ app.get("/login", (request, response) => response.render('login.ejs'));
 app.get("/register", (request, response) => response.render('register.ejs'));
 
 // testing variables
-let email = "tidu.nguyen12.2000@gmail.com";
-let password = "patient12";
-let name = 'christy';
+let email = "tidu.nguyen123.2000@gmail.com";
+let password = "patient123";
+let name = 'christy1';
 
 // check if account can be registered
 async function checkRegister() {
@@ -44,9 +44,9 @@ async function checkRegister() {
 	}
 }
 
-async function checkRegister() {
+async function registerAccount() {
 	try {
-		const account = await db.query(`INSERT INTO accounts (name, email, password, phone) VALUES($1,$2,$3,$4)`, [name, email, password, '010']);
+		const account = await db.query(`INSERT INTO accounts (name, email, password, phone) VALUES($1,$2,$3,$4)`, [name, email, password, '0101']);
 		console.log(account);	
 	} catch(error) {
 		console.log(error);
@@ -64,6 +64,7 @@ async function checkLogin() {
 	}
 
 }
-checkRegister();
+//checkRegister();
+registerAccount();
 //checkLogin();
 app.listen(3000);
